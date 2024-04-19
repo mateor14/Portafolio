@@ -1,132 +1,358 @@
-/*CSS Reset / Normalize*/
+/* CSS Reset / Normalize */
 /* Hemos disponibilizado el básico de reset de estilos. Si quieren, añadan más informaciones 
 en las secciones señaladas */
 /*Já deixaremos o básico de reset de estilos. Caso queira adicionar mais informações
 coloque nas sessões indicadas*/
 
-:root{
-    /* Inserta la variable de los otros colores inspeccionando el exemplo de figma */
-    /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
-   --cor-de-fundo: #F5F5F5;
-   --cor-de-link: #000;
+:root {
+    /* Inserta la variable de los otros colores inspeccionando el ejemplo de figma */
+    /* Se esforce para trabalhar com variáveis, é uma dica profissional valiosa */
+    --cor-de-fundo: #F5F5F5;
+    --cor-de-link: #000;
 }
 
 body {
     box-sizing: border-box;
-    background-color: var(--cor-de-fundo) ;
-    font-family: 'Raleway';
+    background-color: var(--cor-de-fundo);
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1;
 }
-ol, ul,li {
+
+ol, ul, li {
     list-style: none;
 }
-a{
+
+a {
     text-decoration: none;
     color: var(--cor-de-link);
 }
 
-/*En este desafío nosostros gustaríamos que ustedes intentaran utilizar la metodología BEM. 
-
-Lo que es el BEM?
-
-BEM (Bloque, Elemento, Modificador) es un enfoque basado en componentes para el 
-desarrollo web. La idea detrás de esto es dividir la interfaz de usuario en bloques
-independientes. Esto hace que el desarrollo de la interfaz sea fácil y rápido, incluso
-con una interfaz de usuario compleja, y permite la reutilización del código existente sin copiar y pegar.
-
-Enlace de la documentación oficial!
-https://en.bem.info/methodology/quick-start/*/
-
-/*Sección Menu*/
-
-section.menu{
-
+/* Sección Menu */
+section.menu {
+    text-align: center; /* Centra el contenido */
+    margin-bottom: 50px; /* Espacio inferior */
 }
 
-/*Sección Title*/
-
-section.title{
-
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
 }
 
-/*Sección About*/
-
-section.about{
-
+.menu__header, .menu__list {
+    display: flex;
+    align-items: center;
 }
 
-/*Sección Hobbies*/
-
-section.hobbies{
-    
+.menu__list {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Experiencia Académica*/
-
-section.academic{
-
+.menu__list__item {
+    margin-right: 20px;
 }
 
-/* experiencia*/
-
-section.experience{
-
+/* Sección Title */
+section.title {
+    text-align: center; /* Centra el contenido */
+    margin-top: 20px; /* Espacio superior */
 }
 
-/*Contacto*/
-
-section.formcontato{
-
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
 }
 
-/*footeer*/
+.title__div {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
 
-section.footer{
+.title__profile {
+    height: 300px;
+    width: 250px;
+    margin-left: 50px;
+}
+
+.title__container {
+    max-width: 100%;
+}
+
+.title__network {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 15px;
+}
+
+/* Sección About */
+/* Sección About */
+section.about {
+    text-align: center; /* Centra el contenido */
+    margin-top: 50px; /* Espacio superior */
+    margin-bottom: 50px; /* Espacio inferior */
+
    
 }
 
+.skills {
+    text-align: center; /* Centra el texto del título */
+}
+.hobbies {
+    text-align: center; /* Centra el texto del título */
+}
+
+.academic {
+    text-align: center; /* Centra el texto del título */
+}
+.skills__line,
+.hobbies__line,
+.academic__courses {
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    gap: 20px; /* Espacio entre las cajas */
+    flex-wrap: nowrap; /* Evita que se envuelvan a la siguiente línea */
+    overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido es demasiado ancho */
+}
+
+.skills__box,
+.hobbies__box,
+.academic__courses__box {
+    flex: 0 0 auto; /* Establece el ancho automático para que los elementos se ajusten según su contenido */
+    margin: 10px; /* Espacio entre las cajas */
+    text-align: center; /* Centra el contenido */
+}
+/* Experiencia */
+section.experience {
+    text-align: center; /* Centra el contenido */
+    margin-bottom: 50px; /* Espacio inferior */
+}
+
+.experience__section__title {
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.experience__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.experience__box > * {
+    flex: 0 0 auto;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Contacto */
+section.formcontato {
+    text-align: center; /* Centra el contenido */
+    margin-bottom: 50px; /* Espacio inferior */
+}
+
+.formcontato__contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formcontato__text {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.formcontato__title {
+    margin-bottom: 10px;
+}
+
+.formcontato__subtext {
+    margin-bottom: 20px;
+}
+
+.formcontato__form {
+    margin-top: 20px;
+}
+
+/* Footer */
+section.footer {
+    text-align: center; /* Centra el contenido */
+    margin-top: 50px; /* Espacio superior */
+    margin-bottom: 50px; /* Espacio inferior */
+}
+
+.footer__rodape {
+    margin-top: 20px; /* Espacio superior para el contenido */
+}
 /* Vamos a desafiarnos trabajando con responsividad?
 Utiliza las referencias de los breakpoints @media abajo */
 
 
-/*Tablet*/
+/* Tablet */
 @media (min-width: 768px) {
+    /* Menú */
+    .menu {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu__list {
+        display: flex; /* Asegura que la lista se muestre en horizontal */
+        flex-direction: row; /* Asegura que los elementos estén en fila */
+    }
+    .menu__list__item {
+        margin-right: 20px;
+    }
 
-/* Menú */
 
-/*title*/
-
-/*Skills*/
-
-/*Hobbies*/
-
-/*Formación Académica*/
-
-/*Experiencia Profesional*/
-
+/* Sección Title */
+section.title {
+    text-align: center; /* Centra el contenido */
+    margin-top: 20px; /* Espacio superior */
 }
 
-/*Mobile*/
-@media (min-width: 425px) {
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
 
-/*Menu*/
+.title__div {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
 
-/*Titulo*/
+.title__profile {
+    height: 300px;
+    width: 250px;
+    margin-left: 50px;
+}
 
-/*Sección sobre mi*/
+.title__container {
+    max-width: 100%;
+}
 
-/*Skills*/
+.title__network {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 15px;
+}
 
-/*Hobbies*/
- 
-/*Formación Académica*/
+/* Sección About */
+section.about {
+    text-align: center; /* Centra el contenido */
+    margin-top: 50px; /* Espacio superior */
+    margin-bottom: 50px; /* Espacio inferior */
+}
 
-/*Experiencia Profesional*/
+.skills {
+    text-align: center; /* Centra el texto del título */
+}
 
- /*Contacto*/
+.hobbies {
+    text-align: center; /* Centra el texto del título */
+}
 
-/*Footer*/
+.academic {
+    text-align: center; /* Centra el texto del título */
+}
 
+.skills__line,
+.hobbies__line,
+.academic__courses {
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    gap: 20px; /* Espacio entre las cajas */
+    flex-wrap: nowrap; /* Evita que se envuelvan a la siguiente línea */
+    overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido es demasiado ancho */
+}
+
+.skills__box,
+.hobbies__box,
+.academic__courses__box {
+    flex: 0 0 auto; /* Establece el ancho automático para que los elementos se ajusten según su contenido */
+    margin: 10px; /* Espacio entre las cajas */
+    text-align: center; /* Centra el contenido */
+}
+
+/* Experiencia */
+section.experience {
+    text-align: center; /* Centra el contenido */
+    margin-bottom: 50px; /* Espacio inferior */
+}
+
+.experience__section__title {
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.experience__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.experience__box > * {
+    flex: 0 0 auto;
+    margin: 10px;
+    text-align: center;
+}
+
+#itm{
+width: 300px;
+height: 300px;
+}
+
+/* Contacto */
+section.formcontato {
+    text-align: center; /* Centra el contenido */
+    margin-bottom: 50px; /* Espacio inferior */
+}
+
+.formcontato__contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formcontato__text {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.formcontato__title {
+    margin-bottom: 10px;
+}
+
+.formcontato__subtext {
+    margin-bottom: 20px;
+}
+
+.formcontato__form {
+    margin-top: 20px;
+}
+
+/* Footer */
+section.footer {
+    text-align: center; /* Centra el contenido */
+    margin-top: 50px; /* Espacio superior */
+    margin-bottom: 50px; /* Espacio inferior */
+}
+
+.footer__rodape {
+    margin-top: 20px; /* Espacio superior para el contenido */
+}
 }
